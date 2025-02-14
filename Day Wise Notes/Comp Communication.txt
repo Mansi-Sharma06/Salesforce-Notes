@@ -1,0 +1,44 @@
+We can create a package of different components(objects, fields, rollup summary fields, formula fields , validation rules, apex classes, apex triggers).
+
+Apex classes, apex triggers on position object--> To create a package and add position object to the package, we need the test classes for our apex class and triggers both, then only those can be included in the package.
+
+Package Metadata. 
+
+Today's topic:
+1. Component Communication : To pass the data from one LWC component to another LWC component is known as Component Communication.
+This is of 2 types:
+	1. Communication between related components: If we call one component inside another component, it becomes the parent-child relationship between the components. The outer one is Parent comp and the inner one is child comp.
+		--> Parent to child component communication: Means passing the data from parent(outer) comp to child(inner) comp is 'Parent to child' communication.
+
+This is implemented with the help of @api decorator.
+
+		--> Child to Parent component communication: Means passing the data from child(inner) comp to parent(outer) comp is 'Child to Parent' communication.
+
+This is implemented with the help of 'Custom Events'.
+
+2. Communication between unrelated components - means if we want to pass the data from one component to another and both of these components are separate(stand-alone) and no component is part of another component.
+		--> Lightning Message service(LMS)--> Publish subscribe model
+1. One component is treated as 'Publisher' component.
+2. Other component is treated as 'Subscriber' component.
+
+To communicate between publisher and subscriber component, we need to have a 'Message Channel'.
+
+Publisher component will publish the message to the Message Channel and the subscriber component is going to subscribe to the Message Channel and read the message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

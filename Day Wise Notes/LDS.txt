@@ -1,0 +1,34 @@
+SLDS --> Salesforce Lightning Design System. 
+LMS --> Lightning Message Service(Component communication between unrelated components)
+
+Lightning Data Service(LDS): This service helps us to interact with the database without the need of Apex class. we can perform basic CRUD operations with LDS without the need of Apex class. 
+--> If we want to fetch a single record from the database and display its details on LWC, then we can use LDS. Likewise, we can create, update and delete a single record by providing the record id. 
+
+Lightning base components:
+1. <lightning-record-form>
+2. <lightning-record-edit-form>
+
+
+Case study:
+
+CaseStudyLayout--> This is the parent component
+
+Inside this we have further child components:
+1. Casestudynavigation Component
+2. AccountSearchResult Component
+ 	--> AccountInput Component
+3. AccountDetail Component
+	--> AccountMap component
+
+
+
+
+
+
+
+
+
+
+
+
+

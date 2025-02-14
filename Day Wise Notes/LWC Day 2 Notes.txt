@@ -1,0 +1,85 @@
+Today Topics:
+
+1. Decorators in LWC (@track, @wire, @api)
+2. Component Lifecycle --> Lifecycle hooks
+3. Callback and Arrow Functions
+4. Use apex class with LWC(Server side interaction)
+	--> @wire with property
+	--> @wire with function
+
+Decorators in LWC:
+1. @api --> It is used with the property or function defined in js. It is used to define any property as 'public'. It is used to pass values from one component to another component. This we will see in Component Communication Topic.
+2. @track --> It is used with the property. It is used to define 'private' property. It makes the property 'reactive'.
+3. @wire --> It is used to connect our LWC component with the Apex Class. @wire can be used with the property or function. It is used to get the retrieved data from Apex Class to LWC component. This also makes the property reactive.
+
+LWC Component Lifecycle --> Lifecycle Hooks
+
+Lifecycle Hooks--> These are the methods that allow us to run the code at specific stages in the component Lifecycle.
+
+1.Constructor() --> This is the first lifecycle hook called when the component is instantiated. It is used for initialize the values. 
+2. ConnectedCallback() --> This is called when the component is inserted into the DOM.
+3. renderedCallback() --> This is called after every render of the component.
+4. disconnectedCallback() --> This is called when the component is removed from the DOM.
+5. errorCallback() --> used for handling errors at any stage of the component Lifecycle.
+
+Callback Function: 
+--> It is passed as an argument to another function.
+--> It is executed later when a certain task is completed.
+
+Arrow Function:
+--> It can replace callback function in some scenarios. 
+--> We use Arrow function because its syntax is easier to use and it is concise.
+--> Inside the Arrow function, we can use 'this' keyword easily. Using this keyword we can access the properties directly inside the arrow function.
+
+Considering the above advantages of Arrow Function, we will use this function syntax in our LWC codes.
+
+@wire with property
+
+public with sharing class OpportunityController
+{
+
+}
+
+with sharing --> this means that the apex class will follow the OWD settings, role hierarchy, sharing rules and manual sharing which are configured for Opportunity object. 
+
+Opportunity object has 8 records. Out of that 5 records are owned by System admin and 3 records are owned by some user (Andrew).
+
+
+@AuraEnabled --> This annotation is used inside the apex class with the class method to make that method accessible in lightning component.
+
+WITH SECURITY_ENFORCED --> The object and field permissions will be followed.
+
+@wire with Function:
+
+What is the difference between Wire to a Property and Wire to a Function:
+--> In 'Wire to a property', we can display the fetched data from apex class as it is on the front end.
+--> In 'Wire to a Function', we can apply some logic/calculations on the fetched data and then display it on front end. This will have by default 2 properties : data and Error. Data is to store the data fetched from Apex class, and error is to store the errors while fetching the data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

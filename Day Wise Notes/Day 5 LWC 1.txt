@@ -1,0 +1,131 @@
+Day 5 LWC:
+
+LMS --> Lightning Message Service-> to communicate between 2 unrelated lightning components.
+
+Parent to child communication --> we have a component inside another component.
+
+Outer component --> Parent component
+Inner component --> Child component
+
+To send the data from parent to child component --> we use @api decorator to make the property 'public' so that we can access it in another(child) component.
+
+To send the data from child to parent component --> we use custom events. 
+
+If there are 2 independent components, which are not related to each other, and if we want to send the data from one LWC to another, we use LMS(Lightning message Service)
+
+To implement this, we use publish-subscribe model.
+
+One component is going to publish the message or data and other component is going to subscribe to that data.
+
+One component --> we call it as publisher component.
+other component --> we call it as subscriber component.
+
+To publish the data from one comp to another, we use publish() method, which is pre-defined. The publish is having 3 parameters.
+1. messageContext --> wire it to the predefined messageContext
+2. messageChannelname --> our message channel adapter name.
+3. message payload--> data you want to pass to another comp.
+
+To subscribe the data from message Channel, we have to use a pre defined
+subscribe() method. The subscribe method is having 2 parameters.
+1. messageContext
+2. messageChannelName
+3. callback function
+
+Case Study --> This is on the Account Object, which is a standard object. 
+Based on the search input that the user provides in the search box, we will get the list of accounts. Once the user selects any account record, that account detail should be displayed in account detail section.
+
+We have 6 LWC components:
+1. Case Study Layout --> This is the outer most component so this is our 'Parent Component'. Inside this component, we can call all other components. and hence all other components will be the child component for Case study layout component.
+	2. Case Study Navigation
+	3. Account Search Result
+		4. Account Search Input
+	5. Account Detail
+		6. Account Map
+
+Concepts to cover in the case study:
+
+1. Parent to child communication Or child to parent communication.
+2. Lightning message service
+3. Lightning Data service
+4. NavigationMixin
+5. Custom Data Attribute
+6. utility component
+
+Case study layout --> Parent Component
+Case study navigation --> child component
+Integration : 
+
+The process of connecting the salesforce org with any other external application, we call it integration.
+
+Data Loader --> it is an external application, we install it and then we integrate with the salesforce org and then import/export the data. 
+
+Exposing the Web Service --> We expose the functionality(Apex class) created in our salesforce org, so that it can be used by some external application.
+WE can do this with the help of below 2 APIs:
+1. SOAP API
+2. REST API
+
+Consuming the Web Service(Callout Web service) --> We want to use the functionality from some other external application, we can do it using REST or SOAP API. 
+
+SOAP API --> SOAP API uses XML format for data exchange.
+XML --> it is a markup language. data is created in the form of tags. 
+
+REST API --> REST API uses XML as well as JSON format for data exchange.
+JSON --> it is in the form of key-value pair.
+
+Exposing the service using SOAP API: 
+--> create a apex class as a global class
+--> create a method in the Apex class using 'Webservice' keyword.
+--> Go to the Apex classes, for that particular class, XML file will be generated. XML file is known as WSDL (Web service descriptor language).
+
+Consuming the service using SOAP API: To do this, we simply need the XML file.
+From that XML file, we can generate the APEX class and start using that functionality.
+
+Exposing the service using REST API:
+--> We have to use '@RestResource' annotation with the Apex class that we want to expose. 
+--> Inside the class, we can create different methods. Since REST API works on HTTP protocol, we use below HTTP annotations with the methods:
+1. @HTTPGet --> when your apex method is fetching the records from the salesforce object. 
+2. @HTTPPost --> when your apex method is inserting the records into the salesforce object.
+3. @HTTPPut
+4. @HTTPPatch
+5. @HTTPDelete
+
+We have 3 predefined classes in REST API:
+1. RESTRequest--> it is used to hold the request from REST Client.
+2. RESTResponse --> it is used to hold the response we get from REST server.
+3. RESTContext --> this is used to access the request and response objects.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
