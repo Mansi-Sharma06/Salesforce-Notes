@@ -1,0 +1,11 @@
+-->Imperative Approach of calling Apex methods
+-->Lightning Data Table
+-->ShowToastEvent
+
+-->component Communication:
+
+We have 2 approach to call Apex class Methods:
+1. Using @wire annotation
+	--> Using @wire with a property
+	--> Using @wire with a function
+2. Imperative Approach --> Based on the user interaction, the method is going to be called.

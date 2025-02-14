@@ -1,0 +1,48 @@
+Fetching Data from Salesforce Objects. 
+
+MVC (Model View Controller):
+
+View --> Front End --> User Interface --> What a user can view --> In LWC we create this using LWC component(html and js)
+
+Controller --> Custom Logic --> Apex class
+
+Model --> Backend --> Salesforce objects
+
+Database --> where the data is actually stored.
+
+To fetch the data from Salesforce object to LWC, we can do that in below 2 ways:
+
+1. Using wire service --> Here we use @wire decorator to associate our Apex class method to LWC component. It is reactive which means, any change in the salesforce object will reflect in the LWC component data as well.
+
+	WE can use @wire in 2 ways:	
+		--> Wire to a Property --> when we want to fetch the data from salesforce object and display it as it is.
+		--> Wire to a function --> when we want to fetch the data from salesforce object and perform some calculations on that data at client side(.js) and then display the data on LWC HTML.
+
+Whenever the data is fetched from the server(database), it has 2 components:
+--> data
+--> error
+Both of these components are given by the LWC framework.
+
+Wire to a function: 
+
+2. Using Imperative Approach --> calling the function explicitly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
